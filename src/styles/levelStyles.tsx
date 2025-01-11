@@ -53,19 +53,19 @@ export const levelStyles = StyleSheet.create({
         justifyContent: 'center',
     },
     levelText: {
-        fontFamily: FONTS.Lily,
+        // fontFamily: FONTS.Lily,
         fontSize: RFValue(16),
         color: '#333',
         textAlign: 'center',
     },
     highScoreText: {
-        fontFamily: FONTS.Lily,
+        // fontFamily: FONTS.Lily,
         fontSize: RFValue(10),
         color: '#333',
         textAlign: 'center',
     },
     text: {
-        fontFamily: FONTS.Lily,
+        // fontFamily: FONTS.Lily,
         fontSize: RFValue(14),
         paddingHorizontal: 10,
         color: 'white',
@@ -78,7 +78,7 @@ export const levelStyles = StyleSheet.create({
         padding: 20
     },
     comingSoonText: {
-        fontFamily: FONTS.Lily,
+        // fontFamily: FONTS.Lily,
         fontSize: RFValue(14),
         color: 'red',
         opacity: 0.5,
