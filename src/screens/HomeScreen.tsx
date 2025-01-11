@@ -1,4 +1,4 @@
-import { ImageBackground, StyleSheet, Text, View } from 'react-native'
+import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native'
 import React, { FC, useEffect } from 'react'
 import { commonStyles } from '../styles/commonStyles'
 import { screenHeight, screenWidth } from '../utils/Constants'
@@ -6,6 +6,9 @@ import { useIsFocused } from '@react-navigation/native'
 import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated'
 import { UseSound } from '../navigation/SoundContext'
 import LottieView from 'lottie-react-native'
+import ScalePress from '../components/ui/ScalePress'
+import { navigate } from '../utils/NavigationUtil'
+import Footer from '../components/ui/Footer'
 
 const HomeScreen: FC = () => {
   const { playSound } = UseSound()
@@ -31,7 +34,7 @@ const HomeScreen: FC = () => {
 
 
   return (
-    <ImageBackground source={require('../assets/images/b2.png')} style={commonStyles.simpleContainer}>
+    <ImageBackground source={require('../assets/images/b2.png')} style={commonStyles.container}>
       <Animated.Image
         source={require('../assets/images/banner.png')}
         style={[styles.img, animatedStyle]}
@@ -44,6 +47,15 @@ const HomeScreen: FC = () => {
         hardwareAccelerationAndroid
         style={styles.lottieView}
       />
+      <ScalePress style={styles.playButtonContainer} onPress={() => navigate('LevelScreen')}>
+        <Image
+          source={require('../assets/icons/play.png')}
+          style={styles.playButton}
+        />
+      </ScalePress>
+
+      <Footer />
+
     </ImageBackground>
   )
 }
@@ -65,5 +77,13 @@ const styles = StyleSheet.create({
     left: -20,
     top: '30%',
     transform: [{ scaleX: -1 }]
+  },
+  playButton: {
+    resizeMode: 'contain',
+    width: screenWidth * 0.5,
+    height: screenHeight * 0.2,
+  },
+  playButtonContainer: {
+    marginTop: screenHeight * 0.35,
   }
 })
