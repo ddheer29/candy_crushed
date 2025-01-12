@@ -22,11 +22,11 @@ const HomeScreen: FC = () => {
     }
   })
 
-  useEffect(() => {
-    if (isFocused) {
-      playSound('bg', true)
-    }
-  }, [isFocused])
+  // useEffect(() => {
+  //   if (isFocused) {
+  //     playSound('bg', true)
+  //   }
+  // }, [isFocused])
 
   useEffect(() => {
     translateY.value = withTiming(0, { duration: 2600 })

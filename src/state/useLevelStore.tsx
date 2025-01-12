@@ -17,7 +17,7 @@ interface LevelStore {
   completedLevel: (id: number, collectedCandies: number) => void;
 }
 
-const useLevelStore = create<LevelStore>()(
+export const useLevelStore = create<LevelStore>()(
   persist(
     (set, get) => ({
       levels: initialLevelData,
@@ -29,6 +29,7 @@ const useLevelStore = create<LevelStore>()(
           return { levels: updatedLevels }
         })
       },
+
       completedLevel: (id: number, collectedCandies: number) => {
         set((state) => {
           const updatedLevels = state.levels.map((level) =>
@@ -46,6 +47,4 @@ const useLevelStore = create<LevelStore>()(
     }
   )
 )
-
-export default useLevelStore;
 

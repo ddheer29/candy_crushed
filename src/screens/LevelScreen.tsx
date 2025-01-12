@@ -4,8 +4,8 @@ import { commonStyles } from '../styles/commonStyles'
 import { levelStyles } from '../styles/levelStyles'
 import ScalePress from '../components/ui/ScalePress'
 import { goBack, navigate } from '../utils/NavigationUtil'
-import useLevelStore from '../state/useLevelStore'
 import { gameLevels } from '../utils/data'
+import { useLevelStore } from '../state/useLevelStore'
 
 const LevelScreen: FC = () => {
 
