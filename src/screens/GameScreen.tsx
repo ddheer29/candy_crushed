@@ -20,7 +20,7 @@ const GameScreen: FC = () => {
 
   const [gridData, setGridData] = useState<any>(null);
   const [totalCount, setTotalCount] = useState<number>(0)
-  const [time, setTimer] = useState<any>(0)
+  const [time, setTimer] = useState<any>(null)
   const [collectedCandies, setCollectedCandies] = useState<number>(0)
 
   const [showAnimation, setShowAnimation] = useState<boolean>(false);
@@ -36,8 +36,8 @@ const GameScreen: FC = () => {
   useEffect(() => {
     if (item?.level) {
       setGridData(item?.level?.grid)
-      setTotalCount(item?.level.pass)
-      setTimer(item?.level.time)
+      setTotalCount(item?.level?.pass)
+      setTimer(item?.level?.time)
     }
   }, [])
 
