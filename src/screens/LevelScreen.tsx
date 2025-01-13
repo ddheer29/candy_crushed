@@ -21,8 +21,8 @@ const LevelScreen: FC = () => {
 
   const renderItem = ({ item }: any) => {
 
-    const opacity = item.unlocked ? 1 : 0.5
-    const emoji = item.unlocked ? '✅' : (item?.unlocked ? '🍬' : '🔒')
+    const opacity = item?.unlocked ? 1 : 0.5
+    const emoji = item?.completed ? '✅' : (item?.unlocked ? '🍬' : '🔒')
 
     return (
       <ScalePress style={levelStyles.levelItem} onPress={() => {
